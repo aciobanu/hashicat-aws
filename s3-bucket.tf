@@ -1,12 +1,12 @@
+//--------------------------------------------------------------------
+// Modules
 module "s3_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
+  source  = "app.terraform.io/aciobanu-training/s3-bucket/aws"
+  version = "1.15.0"
 
-  bucket_prefix = "${var.prefix}"
+  acceleration_status = "Suspended"
   bucket = "my-s3-bucket"
-  acl    = "private"
-
-  versioning = {
-    enabled = true
-  }
-
+  bucket_prefix = "${var.prefix}"
+  policy = {}
+  request_payer = "BucketOwner"
 }
