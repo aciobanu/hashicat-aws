@@ -31,7 +31,7 @@ resource "aws_security_group" "hashicat" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.hasicat.cidr_block]
+    cidr_blocks = [aws_vpc.hashicat.cidr_block]
   }
 
   ingress {
@@ -45,7 +45,7 @@ resource "aws_security_group" "hashicat" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    #cidr_blocks = [aws_vpc.main.cidr_block]
+    #cidr_blocks = [aws_vpc.hashicat.cidr_block]
   }
 
   egress {
